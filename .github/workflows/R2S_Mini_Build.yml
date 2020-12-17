@@ -1,0 +1,48 @@
+name: NanoPi-R2S OpenWrt Build
+
+on:
+  push:
+    branches: 
+      - master
+  # schedule:
+  #   - cron: 0 20 * * *
+  release:
+    types: [published]
+
+env:
+  SSH_ACTIONS: false
+  TZ: Asia/Shanghai
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          ref: master
+
+      - name: Build All in One
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: . build.sh
+
+            - name: Zip Files
+        run: |
+          gzip friendlywrt-rk3328/out/*.img
+          
+      - name: Assemble Artifact
+        run: |
+          rm -rf ./artifact/
+          mkdir -p ./artifact/
+          mv friendlywrt-rk3328/out/*img* ./artifact/
+          
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: FriendlyWrt_NanoPi-R2S RK3328
+          path: ./artifact/
