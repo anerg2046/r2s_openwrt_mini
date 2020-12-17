@@ -98,6 +98,10 @@ cat ../rk3328.config > configs/config_rk3328
 rm -rf lede
 rm -rf openwrt
 
+# 安装UPX
+mkdir -p friendlywrt/staging_dir/host/bin/
+ln -s /usr/bin/upx-ucl friendlywrt/staging_dir/host/bin/upx
+
 # 开始编译
 pushd friendlywrt
 sed -i '/STAMP_BUILT/d' feeds/packages/utils/runc/Makefile feeds/packages/utils/containerd/Makefile
