@@ -38,14 +38,14 @@ cp -a ./target/linux/generic/files/* ../kernel/
 ./scripts/patch-kernel.sh ../kernel target/linux/generic/backport-5.4
 ./scripts/patch-kernel.sh ../kernel target/linux/generic/pending-5.4
 ./scripts/patch-kernel.sh ../kernel target/linux/generic/hack-5.4
-git revert --no-edit d27623b542548b765ddd46b046169006a3b5f66f
+# git revert --no-edit d27623b542548b765ddd46b046169006a3b5f66f
 popd
 echo "CONFIG_NETFILTER_ADVANCED=y" >> kernel/arch/arm64/configs/nanopi-r2_linux_defconfig
 echo "CONFIG_NETFILTER_XTABLES=m" >> kernel/arch/arm64/configs/nanopi-r2_linux_defconfig
 echo "CONFIG_NETFILTER_XT_TARGET_FLOWOFFLOAD=m" >> kernel/arch/arm64/configs/nanopi-r2_linux_defconfig
-rm -rf friendlywrt/package/libs
-cp -r openwrt/package/libs friendlywrt/package/
-cp -r openwrt/target/linux/octeontx/patches-5.4 friendlywrt/target/linux/rockchip-rk3328/
+# rm -rf friendlywrt/package/libs
+# cp -r openwrt/package/libs friendlywrt/package/
+# cp -r openwrt/target/linux/octeontx/patches-5.4 friendlywrt/target/linux/rockchip-rk3328/
 
 # 自定义软件
 pushd friendlywrt
