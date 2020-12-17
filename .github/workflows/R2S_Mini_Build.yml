@@ -31,7 +31,7 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: . build.sh
 
-            - name: Zip Files
+      - name: Zip Files
         run: |
           gzip friendlywrt-rk3328/out/*.img
           
