@@ -9,7 +9,7 @@ on:
         default: 'false'
   push:
     branches:
-      - main
+      - master
     #paths:
       #- 'router/nanopi_r2s/.config'
       #- '.github/workflows/build-openwrt-nanopi_r2s.yml'
