@@ -68,6 +68,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Swap Lan Wan
+      run: |
         cd openwrt
         git apply ../../patch/r2s_swap_lan_wan.diff
 
