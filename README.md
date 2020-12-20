@@ -13,3 +13,5 @@
 * UPnP
 * KMS服务器
 * FlowOffload
+
+> **注意：** 已交换lan和wan，接线的时候请注意靠外侧的是lan口，如不想交换，可以注释掉或删掉diy-part1.sh中相关代码
