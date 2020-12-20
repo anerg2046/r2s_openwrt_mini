@@ -70,7 +70,7 @@ jobs:
     - name: Swap Lan Wan
       run: |
         cd openwrt
-        git apply ../../patch/r2s_swap_lan_wan.diff
+        git apply $GITHUB_WORKSPACE/patch/r2s_swap_lan_wan.diff
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
