@@ -3,4 +3,5 @@
 echo -e '\nsrc-git lienol https://github.com/xiaorouji/openwrt-passwall' >> feeds.conf.default
 
 # Swap Lan Wan
-git apply ./patch/r2s_swap_lan_wan.diff
+cd openwrt
+git apply ../patch/r2s_swap_lan_wan.diff
