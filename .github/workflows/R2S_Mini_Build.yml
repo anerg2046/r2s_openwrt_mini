@@ -67,6 +67,10 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
+    - name: Swap Lan Wan
+        cd openwrt
+        git apply ../../patch/r2s_swap_lan_wan.diff
+
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
