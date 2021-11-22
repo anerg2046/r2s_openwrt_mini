@@ -1,10 +1,10 @@
 diff --git a/target/linux/rockchip/armv8/base-files/etc/board.d/02_network b/target/linux/rockchip/armv8/base-files/etc/board.d/02_network
-index df276da7..e9c8fdf0 100755
+index abb0e6c5..36e29d55 100755
 --- a/target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 +++ b/target/linux/rockchip/armv8/base-files/etc/board.d/02_network
-@@ -11,7 +11,7 @@ rockchip_setup_interfaces()
- 	friendlyarm,nanopi-r2s|\
+@@ -15,7 +15,7 @@ rockchip_setup_interfaces()
  	friendlyarm,nanopi-r4s|\
+ 	sharevdi,guangmiao-g4c|\
  	xunlong,orangepi-r1-plus)
 -		ucidef_set_interfaces_lan_wan 'eth1' 'eth0'
 +		ucidef_set_interfaces_lan_wan 'eth0' 'eth1'
